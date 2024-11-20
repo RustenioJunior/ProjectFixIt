@@ -12,6 +12,9 @@ jobs:
         with:
           submodules: recursive  
 
+      - name: Listar arquivos
+        run: ls -la
+        
       - name: Login no Docker Hub
         uses: docker/login-action@v3
         with:
