@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "wLoxkXmf8S9b4dvt3eHQyP4IlHVc/xQbVuL1TEBw8Bs=",
+  "Source": "FIxIt.Server",
+  "BasePath": "_content/FIxIt.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Faculdade\\FixItFull\\fixit.client\\fixit.client.esproj",
+      "Version": 2,
+      "Source": "fixit.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

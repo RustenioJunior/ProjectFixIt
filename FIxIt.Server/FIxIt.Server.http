@@ -1,0 +1,6 @@
+@FIxIt.Server_HostAddress = http://localhost:5218
+
+GET {{FIxIt.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

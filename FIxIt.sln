@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIxIt.Server", "FIxIt.Server\FIxIt.Server.csproj", "{B0D38A10-5D3A-490D-856C-F87F1CB781F8}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "fixit.client", "fixit.client\fixit.client.esproj", "{681F5A1D-E0A3-40EE-AD47-49D998601C3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D38A10-5D3A-490D-856C-F87F1CB781F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D38A10-5D3A-490D-856C-F87F1CB781F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D38A10-5D3A-490D-856C-F87F1CB781F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D38A10-5D3A-490D-856C-F87F1CB781F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681F5A1D-E0A3-40EE-AD47-49D998601C3B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80EB4C83-E2C8-442B-A4DF-F2A80A76AE19}
+	EndGlobalSection
+EndGlobal
