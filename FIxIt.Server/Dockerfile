@@ -1,7 +1,7 @@
 # Stage 1: Build do frontend
 FROM node:20 AS with-node
 WORKDIR /app
-COPY fixit.client .
+COPY ../fixit.client .
 WORKDIR /app/fixit.client
 RUN npm install
 RUN npm run build  
@@ -9,7 +9,7 @@ RUN npm run build
 # Stage 2: Build do backend
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["FIxIt.Server/FIxIt.Server.csproj", "FIxIt.Server/"]
+COPY ["../FIxIt.Server/FIxIt.Server.csproj", "FIxIt.Server/"]
 RUN dotnet restore "FIxIt.Server/FIxIt.Server.csproj"
 COPY . .
 WORKDIR "/src/FIxIt.Server"
