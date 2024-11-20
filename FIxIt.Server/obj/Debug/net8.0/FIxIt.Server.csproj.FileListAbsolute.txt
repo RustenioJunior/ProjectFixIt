@@ -20,6 +20,7 @@ D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\FIxIt.Server.AssemblyInfo.c
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\FIxIt.Server.csproj.CoreCompileInputs.cache
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\FIxIt.Server.MvcApplicationPartsAssemblyInfo.cs
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\FIxIt.Server.MvcApplicationPartsAssemblyInfo.cache
+D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\FIxIt.Server.sourcelink.json
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\scopedcss\bundle\FIxIt.Server.styles.css
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\staticwebassets.build.json
 D:\Faculdade\FixItFull\FIxIt.Server\obj\Debug\net8.0\staticwebassets.development.json
