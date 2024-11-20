@@ -1,7 +1,7 @@
 # Stage 1: Build do frontend
 FROM node:20 AS with-node
 WORKDIR /app
-COPY ./fixit.client .  
+COPY ../fixit.client .  
 WORKDIR /app/fixit.client  
 RUN npm install
 RUN npm run build  
