@@ -24,6 +24,3 @@ jobs:
         context: ./FIxIt.Server
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/projectfixit:latest 
-
-    - name: Logout do Docker Hub
-      uses: docker/logout-action@v2
