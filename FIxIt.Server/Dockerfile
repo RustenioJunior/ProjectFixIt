@@ -1,38 +1,26 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
+# Stage 1: Build do frontend
+FROM node:20 AS with-node
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
-
-
-# This stage is used to build the service project
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS with-node
-RUN apt-get update
-RUN apt-get install curl
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
-RUN apt-get -y install nodejs
-RUN npm install -g @angular/cli
-
-FROM with-node AS build
-ARG BUILD_CONFIGURATION=Release
+COPY fixit.client .  
+WORKDIR /app/fixit.client  
+RUN npm install
+RUN npm run build  
+# Stage 2: Build do backend
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["FIxIt.Server.csproj", "./"] 
-COPY ["../fixit.client/fixit.client.esproj", "fixit.client/"] 
-RUN dotnet restore "./FIxIt.Server/FIxIt.Server.csproj"
+COPY ["FIxIt.Server/FIxIt.Server.csproj", "FIxIt.Server/"] 
+RUN dotnet restore "FIxIt.Server/FIxIt.Server.csproj"
 COPY . .
 WORKDIR "/src/FIxIt.Server"
-RUN dotnet build "./FIxIt.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "FIxIt.Server.csproj" -c Release -o out
 
-# This stage is used to publish the service project to be copied to the final stage
+# Stage 3: Publish do backend
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./FIxIt.Server.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "FIxIt.Server.csproj" -c Release -o out --self-contained false -p:PublishSingleFile=false
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
-FROM base AS final
+# Stage 4: Imagem final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /src/FIxIt.Server/out ./
+COPY --from=with-node /app/fixit.client/dist/fixit.client ./wwwroot  
 ENTRYPOINT ["dotnet", "FIxIt.Server.dll"]
