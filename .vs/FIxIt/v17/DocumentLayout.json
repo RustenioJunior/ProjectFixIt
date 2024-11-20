@@ -1,12 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Faculdade\\FixItFull\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D38A10-5D3A-490D-856C-F87F1CB781F8}|FIxIt.Server\\FIxIt.Server.csproj|d:\\faculdade\\fixitfull\\fixit.server\\fixit.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B0D38A10-5D3A-490D-856C-F87F1CB781F8}|FIxIt.Server\\FIxIt.Server.csproj|solutionrelative:fixit.server\\fixit.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FIxIt.Server",
+              "DocumentMoniker": "D:\\Faculdade\\FixItFull\\FIxIt.Server\\FIxIt.Server.csproj",
+              "RelativeDocumentMoniker": "FIxIt.Server\\FIxIt.Server.csproj",
+              "ToolTip": "D:\\Faculdade\\FixItFull\\FIxIt.Server\\FIxIt.Server.csproj",
+              "RelativeToolTip": "FIxIt.Server\\FIxIt.Server.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-20T20:15:43.107Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

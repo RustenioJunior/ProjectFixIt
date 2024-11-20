@@ -19,8 +19,8 @@ RUN npm install -g @angular/cli
 FROM with-node AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["FIxIt.Server/FIxIt.Server.csproj", "FIxIt.Server/"]
-COPY ["fixit.client/fixit.client.esproj", "fixit.client/"]
+COPY ["FIxIt.Server.csproj", "./"] 
+COPY ["../fixit.client/fixit.client.esproj", "fixit.client/"] 
 RUN dotnet restore "./FIxIt.Server/FIxIt.Server.csproj"
 COPY . .
 WORKDIR "/src/FIxIt.Server"
