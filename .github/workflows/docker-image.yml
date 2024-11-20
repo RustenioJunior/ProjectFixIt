@@ -24,6 +24,6 @@ jobs:
       - name: Build 1 da Imagem Docker
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./FIxIt.Server
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/projectfixit:latest
