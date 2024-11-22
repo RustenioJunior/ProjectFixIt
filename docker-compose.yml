@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: .\dockerfile
     ports:
       - "8080:8080"
       - "8081:8081"
