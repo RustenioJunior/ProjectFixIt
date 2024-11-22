@@ -9,7 +9,7 @@ RUN npm run build
 # Stage 2: Build backend
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["FixIt.Server/FIxIt.Server.csproj", "FixIt.Server"]
+COPY "FixIt.Server/FIxIt.Server.csproj" "FixIt.Server"
 COPY . . 
 RUN dotnet restore "./FixIt.Server/FixIt.Server.csproj"      
 COPY . .
