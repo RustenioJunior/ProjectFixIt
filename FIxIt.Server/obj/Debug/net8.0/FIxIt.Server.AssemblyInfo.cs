@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FIxIt.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8139a6a42bbd4845a7754f7d70b0c27bb7fc76c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e322cb23886afef94e0562635a88042b4d1482c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FIxIt.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FIxIt.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
