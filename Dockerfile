@@ -1,28 +1,22 @@
 # Stage 1: Build frontend
-FROM node:22 AS with-node
-WORKDIR /app
-COPY fixit.client/ .  
-WORKDIR /app/fixit.client
-RUN npm install
-RUN npm run build 
-
+FROM node:22-alpine AS with-node  
+WORKDIR /app/fixit.client 
+COPY fixit.client/package.json fixit.client/package-lock.json ./ 
+RUN npm ci --only=production 
+COPY fixit.client/ .
+RUN npm run build
 
 # Stage 2: Build backend
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
-COPY ["FixIt.Server/FixIt.Server.csproj", "FixIt.Server/"] 
-RUN dotnet restore "FixIt.Server/FixIt.Server.csproj"
-COPY ["FixIt.Server/", "FixIt.Server/"] 
-WORKDIR "/src/FixIt.Server"
-RUN dotnet build "FixIt.Server.csproj" -c Release -o out
+WORKDIR /src/FixIt.Server
+COPY FixIt.Server/FixIt.Server.csproj .
+RUN dotnet restore
+COPY FixIt.Server/ .
+RUN dotnet build -c Release -o /app/build
 
-# Stage 3: Publish backend
-FROM build AS publish
-RUN dotnet publish "FixIt.Server.csproj" -c Release -o out --self-contained false -p:PublishSingleFile=false
-
-# Stage 4: Final image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Stage 3: Final image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine 
 WORKDIR /app
-COPY --from=publish /src/FixIt.Server/out ./
+COPY --from=build /app/build .
 COPY --from=with-node /app/fixit.client/dist/fixit.client ./wwwroot
 ENTRYPOINT ["dotnet", "FixIt.Server.dll"]
