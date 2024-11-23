@@ -9,9 +9,9 @@ RUN npm run build
 # Stage 2: Build backend
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /FixIt.Server
-COPY FixIt.Server/FixIt.Server.csproj .  
+COPY /FixIt.Server/FixIt.Server.csproj .  
 RUN dotnet restore
-COPY FixIt.Server/ .                   
+COPY /FixIt.Server .                   
 RUN dotnet build -c Release -o /app/build
 
 # Stage 3: Final image
