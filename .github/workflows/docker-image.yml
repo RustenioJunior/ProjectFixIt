@@ -21,9 +21,6 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Limpar Cache do Buildx
-        run: docker buildx prune -a -f
-
       - name: Build 1 da Imagem Docker
         uses: docker/build-push-action@v3
         with:
