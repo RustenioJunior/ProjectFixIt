@@ -1,2 +1,30 @@
-FIxIt.Server/obj/Debug/net8.0/FIxIt.Server.AssemblyInfo.cs
-FIxIt.Server/obj/Debug/net8.0/FIxIt.Server.AssemblyInfoInputs.cache
+# General ignores
+.DS_Store
+Thumbs.db
+*.suo
+*.user
+*.sln.docstates
+
+# Build output directories
+bin/
+obj/
+dist/  # Add this if you have a dist directory for build output
+out/   # Add if you are using .NET and have an 'out' directory
+publish/ # Add this if you are using .NET and have a publish directory
+
+# IDE-specific files
+.vs/
+.idea/
+
+# Node.js-specific ignores
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker-specific ignores
+Dockerfile.*  # Consider ignoring intermediate Dockerfiles
+.dockerignore.*
+
+# Operating system files
+*.lock-wscript
