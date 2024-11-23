@@ -8,10 +8,10 @@ RUN npm run build
 
 # Stage 2: Build and Publish backend (corrected paths)
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-publish
-WORKDIR /FixIt.Server
-COPY FixIt.Server/FixIt.Server.csproj .
+WORKDIR /FixItFull/FIxIt.Server/
+COPY /FixItFull/FixIt.Server/FixIt.Server.csproj .
 RUN dotnet restore
-COPY FixIt.Server/ .
+COPY /FixItFull/FIxIt.Server/ .
 RUN dotnet publish -c Release -o /app/publish
 
 # Stage 3: Final image (unchanged)
