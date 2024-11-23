@@ -6,6 +6,7 @@ WORKDIR /app/fixit.client
 RUN npm install
 RUN npm run build 
 
+
 # Stage 2: Build backend
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
