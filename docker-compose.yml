@@ -1,8 +1,9 @@
+version: "3.9"  # Specify a version
 services:
   app:
     build:
       context: .
-      dockerfile: .\FixItFull\Dockerfile
+      dockerfile: ./Dockerfile  # Corrected path
     ports:
       - "8080:8080"
       - "8081:8081"
@@ -10,9 +11,14 @@ services:
       - ConnectionStrings__DefaultConnection=Host=db;Database=fixitdb;Username=postgres;Password=grupo07;Port=5434
     depends_on:
       - db
+    healthcheck:  # Example health check
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"] # Adapt to your application's health check endpoint.
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   db:
-    image: postgres:latest
+    image: postgres:15 # Specify PostgreSQL version
     environment:
       - POSTGRES_DB=fixitdb
       - POSTGRES_USER=postgres
@@ -20,7 +26,12 @@ services:
     ports:
       - "5434:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data 
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck: # Example health check for Postgres
+      test: ["CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 volumes:
-  postgres_data:  
+  postgres_data:
